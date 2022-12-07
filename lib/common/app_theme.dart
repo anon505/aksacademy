@@ -174,10 +174,21 @@ class AppTextTheme {
     fontSize: 12,
     height: 1.2,
   );
+  TextStyle? get xSmallNormalMedium => const TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 12,
+    height: 1.2,
+  );
 
   TextStyle? get largeNoneBold => const TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 18,
+    height: 1.2,
+  );
+
+  TextStyle? get interBold => const TextStyle(
+    fontWeight: FontWeight.w700,
+    fontSize: 24,
     height: 1.2,
   );
 }

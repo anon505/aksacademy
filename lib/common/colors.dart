@@ -19,7 +19,7 @@ extension HexColor on Color {
 
 class BaseColors {
   //primary
-  static Color primary50 = HexColor.fromHex('#F0F5FF');
+  static Color primary50 = HexColor.fromHex('#ECF2FF');
   static Color primary100 = HexColor.fromHex('#D6E4FF');
   static Color primary500 = HexColor.fromHex('#3366FF');
   static Color primary600 = HexColor.fromHex('#254EDB');

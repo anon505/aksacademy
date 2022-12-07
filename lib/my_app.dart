@@ -4,6 +4,8 @@ import 'package:aksacademy/common/utils.dart';
 import 'package:aksacademy/presentation/page/detail/detail_page.dart';
 import 'package:aksacademy/presentation/page/payment/payment_page.dart';
 import 'package:aksacademy/presentation/page/payment/payment_success_page.dart';
+import 'package:aksacademy/presentation/page/profile/profile_edit_page.dart';
+import 'package:aksacademy/presentation/page/profile/profile_page.dart';
 import 'package:aksacademy/presentation/page/ticket/ticket_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -51,6 +53,10 @@ class _MyAppState extends State<MyApp> {
             return MaterialPageRoute(builder: (_) => const PaymentSuccessPage());
           case TicketDetailPage.routeName:
             return MaterialPageRoute(builder: (_) => const TicketDetailPage());
+          case ProfilePage.routeName:
+            return MaterialPageRoute(builder: (_) => const ProfilePage());
+          case ProfileEditPage.routeName:
+            return MaterialPageRoute(builder: (_) => const ProfileEditPage());
         }
       },
     );
