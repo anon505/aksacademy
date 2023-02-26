@@ -9,6 +9,7 @@ import 'package:aksacademy/presentation/page/main/discover/discover_page.dart';
 import 'package:aksacademy/presentation/page/main/home/home_page.dart';
 import 'package:aksacademy/presentation/page/main/ticket/ticket_page.dart';
 import 'package:aksacademy/presentation/page/profile/profile_page.dart';
+import 'package:aksacademy/presentation/page/upload/upload_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -23,7 +24,7 @@ class _MainPageState extends State<MainPage> {
   double _heightBar=0;
   void _onItemTapped(int index) {
     if(index==3){
-      Navigator.pushNamed(context, ProfilePage.routeName);
+      Navigator.pushNamed(context, UploadPage.routeName);
     }else {
       setState(() {
         _selectedIndex = index;

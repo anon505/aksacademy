@@ -1,1 +1,2 @@
-enum RequestState { Empty,EmptyPagination, Loading,LoadingPagination, Loaded,LoadedPagination, Error }
+enum RequestState { Empty,EmptyPagination, Loading,LoadingPagination, Loaded,
+  LoadedPagination, Error }

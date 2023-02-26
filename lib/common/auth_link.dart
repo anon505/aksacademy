@@ -1,12 +1,7 @@
 import 'dart:async';
-
-import "package:gql_exec/gql_exec.dart";
-import "package:gql_http_link/gql_http_link.dart";
-import "package:gql_link/gql_link.dart";
-import "package:gql_transform_link/gql_transform_link.dart";
 import 'package:graphql/client.dart';
 
-typedef _RequestTransformer = FutureOr<Request> Function(Request request);
+typedef RequestTransformer = FutureOr<Request> Function(Request request);
 
 typedef OnException = FutureOr<String> Function(
   HttpLinkServerException exception,
@@ -30,7 +25,7 @@ class AuthLink extends _AsyncReqTransformLink {
   /// Header key to set to the result of [getToken]
   final String headerKey;
 
-  static _RequestTransformer transform(
+  static RequestTransformer transform(
     String headerKey,
     FutureOr<String?> Function() getToken,
   ) =>
@@ -49,7 +44,7 @@ class AuthLink extends _AsyncReqTransformLink {
 
 /// Version of [TransformLink] that handles async transforms
 class _AsyncReqTransformLink extends Link {
-  final _RequestTransformer requestTransformer;
+  final RequestTransformer requestTransformer;
 
   _AsyncReqTransformLink({
     required this.requestTransformer,

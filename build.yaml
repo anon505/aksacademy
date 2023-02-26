@@ -1,0 +1,15 @@
+targets:
+  $default:
+    builders:
+      graphql_codegen:
+        options:
+          clients:
+            - graphql
+            - graphql_flutter
+          scalars:
+            DateTime:
+              type: DateTime
+            Float:
+              type: double
+            JSON:
+              type: Map<String, dynamic>

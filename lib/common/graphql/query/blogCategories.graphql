@@ -1,0 +1,13 @@
+query blogCategories{
+    blogCategories(limit:500){
+        items{
+            id
+            name
+            iconSrc{
+                md
+                original
+            }
+            description
+        }
+    }
+}

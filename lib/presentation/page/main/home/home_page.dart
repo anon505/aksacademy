@@ -3,23 +3,36 @@ import 'package:aksacademy/presentation/component/common/input.dart';
 import 'package:aksacademy/presentation/component/main/home/category.dart';
 import 'package:aksacademy/presentation/component/main/home/event_item.dart';
 import 'package:aksacademy/presentation/page/detail/detail_page.dart';
+import 'package:aksacademy/presentation/provider/post_category_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class HomePage extends StatefulWidget {
-  double heightBar;
-  HomePage({Key? key,required this.heightBar}) : super(key: key);
+  final double heightBar;
+  const HomePage({Key? key,required this.heightBar}) : super(key: key);
 
   @override
-  _HomePageState createState() =>
-      _HomePageState();
+  State createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
 
   final RefreshController _refreshController = RefreshController(initialRefresh: false);
 
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Future.microtask(() => Provider.of<PostCategoryProvider>(context, listen: false)
+        ..doGetPostCategories().then((value){
+          context.read<PostCategoryProvider>().postCategoriesData?.items.forEach((element) {
+            print(element.name);
+          });
+        }));
+    });
+  }
   void _onRefresh() async {
   }
 

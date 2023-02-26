@@ -18,7 +18,7 @@ class DioClient {
 
     final token = preferences.getString('token');
     var options = BaseOptions(
-      baseUrl: flavor == 'dev' ? Configs.baseUrlDev : Configs.baseUrlProd,
+      baseUrl: flavor == 'dev' ? Configs.restUrlDev : Configs.restUrlProd,
       followRedirects: false,
       sendTimeout: 0,
       connectTimeout: 0,
