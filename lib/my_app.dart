@@ -8,6 +8,7 @@ import 'package:aksacademy/presentation/page/profile/profile_page.dart';
 import 'package:aksacademy/presentation/page/ticket/ticket_detail_page.dart';
 import 'package:aksacademy/presentation/page/upload/upload_page.dart';
 import 'package:aksacademy/presentation/provider/post_category_provider.dart';
+import 'package:aksacademy/presentation/provider/upload_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,9 @@ class _MyAppState extends State<MyApp> {
         providers: [
           ChangeNotifierProvider(
             create: (_) => di.locator<PostCategoryProvider>(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => di.locator<UploadProvider>(),
           ),
         ],
         child: MaterialApp(

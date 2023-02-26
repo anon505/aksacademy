@@ -1,5 +1,6 @@
 import 'package:aksacademy/common/configs.dart';
 import 'package:dio/dio.dart';
+import 'package:dio_logger/dio_logger.dart';
 import 'package:fk_user_agent/fk_user_agent.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -32,6 +33,7 @@ class DioClient {
       },
     );
     Dio dio = Dio(options);
+    dio.interceptors.add(dioLoggerInterceptor);
     return dio;
   }
 }

@@ -232,6 +232,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.6"
+  dio_logger:
+    dependency: "direct main"
+    description:
+      name: dio_logger
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.8+8"
   either_dart:
     dependency: "direct main"
     description:
